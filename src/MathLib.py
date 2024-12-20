@@ -22,16 +22,16 @@ class MathLib:
             case 'pow':
                 math_request.set_res(ope1 ** ope2)
             case 'root':
-                math_request.set_res(ope1 % ope2)
+                math_request.set_res(cls.__root(ope1, ope2))
             case _:
-                raise NotImplementedError
+                raise OperatorNotSupportedException
 
     @staticmethod
     def __root(ope1, ope2):
-        raise NotImplementedError
+        return round(ope1 ** (1/ope2), 2)
 
 class MathLibException(Exception):
     pass
 
 class OperatorNotSupportedException(MathLibException):
-    pass
+    print("operator not supported")
