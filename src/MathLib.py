@@ -24,7 +24,7 @@ class MathLib:
             case 'root':
                 math_request.set_res(cls.__root(ope1, ope2))
             case _:
-                raise OperatorNotSupportedException
+                raise OperatorNotSupportedException("Operator not supported")
 
     @staticmethod
     def __root(ope1, ope2):
@@ -34,4 +34,4 @@ class MathLibException(Exception):
     pass
 
 class OperatorNotSupportedException(MathLibException):
-    print("operator not supported")
+    pass
